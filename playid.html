@@ -53,7 +53,7 @@
 <script>
     window.onload = function() {
         const url = window.location.href;
-        const playId = url.match(/playid(\d+)/)[1];
+        const playId = url.match(/movie/(\d+)/)[1];
         const iframe = document.querySelector('iframe');
         const iframeSrc = iframe.src.replace(/film_id/, playId);
         iframe.src = iframeSrc;
