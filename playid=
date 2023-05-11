@@ -1,0 +1,105 @@
+<!DOCTYPE html><html lang="ru"><head>
+  <script src="js/actualize.js" async></script>
+	<meta charset="utf-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+	<link rel="stylesheet" href="C:/Users/Ostusyak/Desktop/bot/css/bootstrap-reboot.min.css">
+	<link rel="stylesheet" href="C:/Users/Ostusyak/Desktop/bot/css/bootstrap-grid.min.css">
+	<link rel="stylesheet" href="C:/Users/Ostusyak/Desktop/bot/css/owl.carousel.min.css">
+	<link rel="stylesheet" href="C:/Users/Ostusyak/Desktop/bot/css/slider-radio.css">
+	<link rel="stylesheet" href="C:/Users/Ostusyak/Desktop/bot/css/select2.min.css">
+	<link rel="stylesheet" href="C:/Users/Ostusyak/Desktop/bot/css/magnific-popup.css">
+	
+	<link rel="stylesheet" href="C:/Users/Ostusyak/Desktop/bot/css/main.css">
+	<link rel="icon" type="image/png" href="C:/Users/Ostusyak/Desktop/bot//images/logo_1.png" sizes="32x32">
+	<link rel="apple-touch-icon" href="C:/Users/Ostusyak/Desktop/bot/images/logo_1.png">
+</head>
+
+<body>
+	<!-- header (hidden style) -->
+	<header class="header header--hidden">
+		<div class="container">
+			<div class="row">
+				<div class="col-12">
+					<div class="header__content">
+						<a href="https://t.me/movies_filmbot" class="header__logo">
+							<img src="C:\Users\Ostusyak\Desktop\bot\images/logo.png" style="width:55px;" alt="PopCorn BOT">
+						</a>
+					</div>
+				</div>
+			</div>
+		</div>
+	</header>
+	<!-- end header -->
+	<!-- details -->
+	<section class="section section--head section--head-fixed section--gradient section--details-bg" style="height:auto;">
+	<div class="section__bg" data-bg="C:\Users\Ostusyak\Desktop\bot\images/media.jpg"></div>
+		<div class="container">
+			<!-- article -->
+			<div class="article">
+				<div class="row">
+					<div class="col-12 col-xl-8" style="height:80%;">
+						<!-- article content -->
+						<div class="article__content">
+							<h1></h1>
+<iframe src="https://api.strvid.ws/embed/movie/film_id/?host=tg.movie" allow="autoplay *" width="640" height="100%" allowfullscreen="" webkitallowfullscreen="" mozallowfullscreen="" oallowfullscreen="" msallowfullscreen=></iframe>
+
+				<p class="descriptions"> </p>
+						</div>
+						<!-- end article content -->
+					</div>
+					</div>
+				</div>
+			</div>
+			<!-- end article -->
+<script>
+    window.onload = function() {
+        const url = window.location.href;
+        const playId = url.match(/playid=(\d+)/)[1];
+        const iframe = document.querySelector('iframe');
+        const iframeSrc = iframe.src.replace(/film_id/, playId);
+        iframe.src = iframeSrc;
+		
+  fetch(`https://api1683802090.bhcesh.me/franchise/details?token=ec18059a12110f229a7ca08670d1afd4&id=${playId}`)
+    .then(response => response.json())
+    .then(data => {
+      const articleContent = document.querySelector('.article__content');
+      const nameEl = document.createElement('h1');
+      nameEl.innerText = data.name;
+      articleContent.insertBefore(nameEl, articleContent.firstChild);
+	  const description = data.description;
+      const descriptions = document.querySelectorAll('p.descriptions');
+      descriptions.forEach(p => p.innerHTML = description);
+    })
+    .catch(error => console.error(error));	
+    };
+</script>		
+	</section>
+	<!-- end details -->
+
+	<!-- footer -->
+	<footer class="footer">
+		<div class="container">
+			<div class="row">
+				<div class="col-12">
+					<div class="footer__content">
+						<p class="footer__tagline"><b>PopCorn BOT</b><br>Бесплатный онлайн-кинотеатр в Telegram</p>
+						<small class="footer__copyright">PopCorn BOT © 2023 г.</small>
+					</div>
+				</div>
+			</div>
+		</div>
+	</footer>
+	<!-- end footer -->
+
+	<!-- JS -->
+	<script src="https://bot.kinozzz.ru/js/jquery-3.5.1.min.js"></script>
+	<script src="https://bot.kinozzz.ru/js/bootstrap.bundle.min.js"></script>
+	<script src="https://bot.kinozzz.ru/js/owl.carousel.min.js"></script>
+	<script src="https://bot.kinozzz.ru/js/slider-radio.js"></script>
+	<script src="https://bot.kinozzz.ru/js/select2.min.js"></script>
+	<script src="https://bot.kinozzz.ru/js/smooth-scrollbar.js"></script>
+	<script src="https://bot.kinozzz.ru/js/jquery.magnific-popup.min.js"></script>
+	<script src="https://bot.kinozzz.ru/bot/js/plyr.min.js"></script>
+	<script src="https://bot.kinozzz.ru/js/main.js"></script>
+
+</body></html>
